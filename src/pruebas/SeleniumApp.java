@@ -1,4 +1,4 @@
-package controlador;
+package pruebas;
 
 import java.time.Duration;
 
@@ -24,15 +24,8 @@ public class SeleniumApp {
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.id("login-button")).click();
 		
-		/*String texto = driver.findElement(By.className("error-message-container")).getText();
-		System.out.println(texto);*/
-		
-		String texto = driver.findElement(By.className("app_logo")).getText();
-		
-		if(texto.equals("Swag Labs")) {
-			System.out.println("Logueado correctamente");
-		}
-
+		String texto = driver.findElement(By.className("error-message-container")).getText();
+		System.out.println(texto);
 		
 		try {
 			Thread.sleep(2000);
