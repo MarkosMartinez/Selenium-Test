@@ -20,12 +20,19 @@ public class SeleniumApp {
 		
 		driver.get("http://www.saucedemo.com");
 		
-		driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
+		driver.findElement(By.id("user-name")).sendKeys("standard_user");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.id("login-button")).click();
 		
-		String texto = driver.findElement(By.className("error-message-container")).getText();
-		System.out.println(texto);
+		/*String texto = driver.findElement(By.className("error-message-container")).getText();
+		System.out.println(texto);*/
+		
+		String texto = driver.findElement(By.className("app_logo")).getText();
+		
+		if(texto.equals("Swag Labs")) {
+			System.out.println("Logueado correctamente");
+		}
+
 		
 		try {
 			Thread.sleep(2000);
@@ -33,7 +40,7 @@ public class SeleniumApp {
 			e.printStackTrace();
 		}
 		
-		driver.quit();
+		/*driver.quit();*/ //Para que no lo cierre comentarlo.
 		
 	}
 
